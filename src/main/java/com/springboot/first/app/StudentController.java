@@ -28,12 +28,16 @@ public class StudentController {
 	}
 	
 	@GetMapping("/student/{firstName}/{lastName}")
-	public Student studentPathVariable(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName) {
+	public Student studentPathVariable(
+			@PathVariable("firstName") String firstName, 
+			@PathVariable("lastName") String lastName) {
 		return new Student(firstName, lastName);
 	}
 	
 	@GetMapping("/student/query")
-	public Student studentQueryParam(@RequestParam(name = "firstName")  String firstName, @RequestParam(name = "lastName") String lastName) {
+	public Student studentQueryParam(
+			@RequestParam(name = "firstName")  String firstName, 
+			@RequestParam(name = "lastName") String lastName) {
 		return new Student(firstName, lastName);
 	}
 }
